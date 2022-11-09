@@ -137,6 +137,34 @@ public class Calculator implements ActionListener {
             calcTextField.setText(calcTextField.getText().concat("."));
         }
 
+        //  getting text when clicked on addition button
+        if(e.getSource()==addition) {
+            numFirst = Double.parseDouble(calcTextField.getText());
+            operator ='+';
+            calcTextField.setText("");
+        }
+
+        //  getting text when clicked on subtraction button
+        if(e.getSource()==subtraction) {
+            numFirst = Double.parseDouble(calcTextField.getText());
+            operator ='-';
+            calcTextField.setText("");
+        }
+
+        //  getting text when clicked on multiplication button
+        if(e.getSource()==multiplication) {
+            numFirst = Double.parseDouble(calcTextField.getText());
+            operator ='*';
+            calcTextField.setText("");
+        }
+
+        //  getting text when clicked on division button
+        if(e.getSource()==division) {
+            numFirst = Double.parseDouble(calcTextField.getText());
+            operator ='/';
+            calcTextField.setText("");
+        }
+
     }
 
 }
