@@ -187,6 +187,20 @@ public class Calculator implements ActionListener {
             numFirst=result;
         }
 
+        // logic for delete button
+        if(e.getSource()==delete) {
+            String string = calcTextField.getText();
+            calcTextField.setText("");
+            for(int i=0;i<string.length()-1;i++) {
+                calcTextField.setText(calcTextField.getText()+string.charAt(i));
+            }
+        }
+
+        // logic for all clear button
+        if(e.getSource()==allClear) {
+            calcTextField.setText("");
+        }
+
     }
 
 }
