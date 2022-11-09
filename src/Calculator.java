@@ -41,6 +41,15 @@ public class Calculator implements ActionListener {
         calcFrame.setLayout(null);
         calcFrame.setLocationRelativeTo(null);
 
+        // instantiating the text field of the calculator
+        calcTextField = new JTextField();
+        // adding the location of our text field
+        calcTextField.setBounds(45, 25, 350, 50);
+        calcTextField.setFont(newFont);
+        calcTextField.setEditable(false);
+
+        // adding the text field to the calculator frame
+        calcFrame.add(calcTextField);
         calcFrame.setVisible(true);
 
     }
