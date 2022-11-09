@@ -8,8 +8,8 @@ public class Calculator implements ActionListener {
 
     JFrame calcFrame;
     JTextField calcTextField;
-    JButton [] calcNumberButtons = new JButton[10];
-    JButton [] calcFunctionButtons = new JButton[8];
+    JButton[] calcNumberButtons = new JButton[10];
+    JButton[] calcFunctionButtons = new JButton[8];
     // function buttons
     JButton addition, subtraction, multiplication, division;
     JButton decimals, equals, delete, allClear;
@@ -41,14 +41,14 @@ public class Calculator implements ActionListener {
         calcTextField.setEditable(false);
 
         // instantiating the buttons for the calculator
-        addition = new JButton("➕");
-        subtraction = new JButton("➖");
-        multiplication = new JButton("❌");
-        division = new JButton("➗");
-        decimals = new JButton("•");
+        addition = new JButton("+");
+        subtraction = new JButton("-");
+        multiplication = new JButton("x");
+        division = new JButton("/");
+        decimals = new JButton(".");
         delete = new JButton("del");
         allClear = new JButton("AC");
-        // ×+-÷
+        equals = new JButton("=");
 
         // adding the buttons to the function button array
         calcFunctionButtons[0] = addition;
@@ -61,14 +61,14 @@ public class Calculator implements ActionListener {
         calcFunctionButtons[7] = allClear;
 
         //  giving the properties to the function buttons
-        for (int i=0; i<8; i++) {
+        for (int i = 0; i < 8; i++) {
             calcFunctionButtons[i].addActionListener(this);
             calcFunctionButtons[i].setFont(newFont);
             calcFunctionButtons[i].setFocusable(false);
         }
 
         //  adding and giving the properties to the number buttons
-        for (int i=0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             calcNumberButtons[i] = new JButton(String.valueOf(i));
             calcNumberButtons[i].addActionListener(this);
             calcNumberButtons[i].setFont(newFont);
@@ -84,7 +84,7 @@ public class Calculator implements ActionListener {
         // instantiating the calculator panel
         btnPanel = new JPanel();
         btnPanel.setBounds(45, 100, 325, 325);
-        btnPanel.setLayout(new GridLayout(4,4, 10, 10));
+        btnPanel.setLayout(new GridLayout(4, 4, 10, 10));
 
         // adding the buttons to the calculator panel
         btnPanel.add(calcNumberButtons[1]);
@@ -124,6 +124,12 @@ public class Calculator implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        for (int i = 0; i < 10; i++) {
+            if (e.getSource() == calcNumberButtons[i]) {
+                calcTextField.setText(calcTextField.getText().concat(String.valueOf(i)));
+            }
+        }
 
     }
 
