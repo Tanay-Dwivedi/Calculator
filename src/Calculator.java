@@ -125,10 +125,16 @@ public class Calculator implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        // getting text when clicked on number button
         for (int i = 0; i < 10; i++) {
             if (e.getSource() == calcNumberButtons[i]) {
                 calcTextField.setText(calcTextField.getText().concat(String.valueOf(i)));
             }
+        }
+
+        //  getting text when clicked on decimal button
+        if(e.getSource()==decimals) {
+            calcTextField.setText(calcTextField.getText().concat("."));
         }
 
     }
