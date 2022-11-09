@@ -9,10 +9,10 @@ public class Calculator implements ActionListener {
     JFrame calcFrame;
     JTextField calcTextField;
     JButton[] calcNumberButtons = new JButton[10];
-    JButton[] calcFunctionButtons = new JButton[8];
+    JButton[] calcFunctionButtons = new JButton[9];
     // function buttons
     JButton addition, subtraction, multiplication, division;
-    JButton decimals, equals, delete, allClear;
+    JButton decimals, negative, equals, delete, allClear;
     // panel to hold all the buttons
     JPanel btnPanel;
 
@@ -49,6 +49,7 @@ public class Calculator implements ActionListener {
         delete = new JButton("del");
         allClear = new JButton("AC");
         equals = new JButton("=");
+        negative = new JButton("(-)");
 
         // adding the buttons to the function button array
         calcFunctionButtons[0] = addition;
@@ -59,9 +60,10 @@ public class Calculator implements ActionListener {
         calcFunctionButtons[5] = equals;
         calcFunctionButtons[6] = delete;
         calcFunctionButtons[7] = allClear;
+        calcFunctionButtons[8] = negative;
 
         //  giving the properties to the function buttons
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             calcFunctionButtons[i].addActionListener(this);
             calcFunctionButtons[i].setFont(newFont);
             calcFunctionButtons[i].setFocusable(false);
@@ -75,11 +77,14 @@ public class Calculator implements ActionListener {
             calcNumberButtons[i].setFocusable(false);
         }
 
+        // adding the negative button
+        negative.setBounds(45, 430, 100, 50);
+
         // adding the delete button
-        delete.setBounds(45, 430, 145, 45);
+        delete.setBounds(145, 430, 100, 50);
 
         // adding the all clear button
-        allClear.setBounds(200, 430, 145, 45);
+        allClear.setBounds(245, 430, 100, 50);
 
         // instantiating the calculator panel
         btnPanel = new JPanel();
@@ -103,9 +108,14 @@ public class Calculator implements ActionListener {
         btnPanel.add(calcNumberButtons[0]);
         btnPanel.add(equals);
         btnPanel.add(division);
+        btnPanel.add(negative);
 
         // adding the button panel to the frame
         calcFrame.add(btnPanel);
+
+        // adding the negative button to the frame
+        calcFrame.add(negative);
+
         // adding delete and all clear button to the frame
         calcFrame.add(delete);
         calcFrame.add(allClear);
@@ -185,6 +195,13 @@ public class Calculator implements ActionListener {
             }
             calcTextField.setText(String.valueOf(result));
             numFirst=result;
+        }
+
+        // logic for negative button
+        if(e.getSource()==negative) {
+            double temp = Double.parseDouble(calcTextField.getText());
+            temp*=-1;
+            calcTextField.setText(String.valueOf(temp));
         }
 
         // logic for delete button
