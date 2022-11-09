@@ -24,13 +24,6 @@ public class Calculator implements ActionListener {
     double numFirst = 0, numSecond = 0, result = 0;
     char operator;
 
-    public static void main(String[] args) {
-
-        // creating instance of calculator class
-        Calculator calc = new Calculator();
-
-    }
-
     // creating a constructor
     Calculator() {
 
@@ -68,9 +61,23 @@ public class Calculator implements ActionListener {
         calcFunctionButtons[6] = delete;
         calcFunctionButtons[7] = allClear;
 
+        //  giving the properties to the function buttons
+        for (int i=0; i<=7; i++) {
+            calcFunctionButtons[i].addActionListener(this);
+            calcFunctionButtons[i].setFont(newFont);
+            calcFunctionButtons[i].setFocusable(false);
+        }
+
         // adding the text field to the calculator frame
         calcFrame.add(calcTextField);
         calcFrame.setVisible(true);
+
+    }
+
+    public static void main(String[] args) {
+
+        // creating instance of calculator class
+        Calculator calc = new Calculator();
 
     }
 
