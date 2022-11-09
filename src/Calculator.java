@@ -165,6 +165,28 @@ public class Calculator implements ActionListener {
             calcTextField.setText("");
         }
 
+        if(e.getSource()==equals) {
+            numSecond=Double.parseDouble(calcTextField.getText());
+
+            // giving the logic to add, subtract, multiply and divide buttons
+            switch (operator) {
+
+                //logic for addition
+                case '+' -> result = numFirst + numSecond;
+
+                //logic for subtraction
+                case '-' -> result = numFirst - numSecond;
+
+                //logic for multiplication
+                case '*' -> result = numFirst * numSecond;
+
+                //logic for division
+                case '/' -> result = numFirst / numSecond;
+            }
+            calcTextField.setText(String.valueOf(result));
+            numFirst=result;
+        }
+
     }
 
 }
