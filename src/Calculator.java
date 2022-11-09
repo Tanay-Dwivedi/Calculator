@@ -48,6 +48,26 @@ public class Calculator implements ActionListener {
         calcTextField.setFont(newFont);
         calcTextField.setEditable(false);
 
+        // instantiating the buttons for the calculator
+        addition = new JButton("➕");
+        subtraction = new JButton("➖");
+        multiplication = new JButton("❌");
+        division = new JButton("➗");
+        decimals = new JButton("•");
+        delete = new JButton("del");
+        allClear = new JButton("AC");
+        // ×+-÷
+
+        // adding the buttons to the function button array
+        calcFunctionButtons[0] = addition;
+        calcFunctionButtons[1] = subtraction;
+        calcFunctionButtons[2] = multiplication;
+        calcFunctionButtons[3] = division;
+        calcFunctionButtons[4] = decimals;
+        calcFunctionButtons[5] = equals;
+        calcFunctionButtons[6] = delete;
+        calcFunctionButtons[7] = allClear;
+
         // adding the text field to the calculator frame
         calcFrame.add(calcTextField);
         calcFrame.setVisible(true);
