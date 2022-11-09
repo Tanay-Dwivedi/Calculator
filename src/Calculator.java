@@ -2,8 +2,7 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class Calculator implements ActionListener {
 
@@ -82,7 +81,31 @@ public class Calculator implements ActionListener {
         // adding the all clear button
         allClear.setBounds(200, 430, 145, 45);
 
+        // instantiating the calculator panel
+        btnPanel = new JPanel();
+        btnPanel.setBounds(45, 100, 325, 325);
+        btnPanel.setLayout(new GridLayout(4,4, 10, 10));
 
+        // adding the buttons to the calculator panel
+        btnPanel.add(calcNumberButtons[1]);
+        btnPanel.add(calcNumberButtons[2]);
+        btnPanel.add(calcNumberButtons[3]);
+        btnPanel.add(addition);
+        btnPanel.add(calcNumberButtons[4]);
+        btnPanel.add(calcNumberButtons[5]);
+        btnPanel.add(calcNumberButtons[6]);
+        btnPanel.add(subtraction);
+        btnPanel.add(calcNumberButtons[7]);
+        btnPanel.add(calcNumberButtons[8]);
+        btnPanel.add(calcNumberButtons[9]);
+        btnPanel.add(multiplication);
+        btnPanel.add(decimals);
+        btnPanel.add(calcNumberButtons[0]);
+        btnPanel.add(equals);
+        btnPanel.add(division);
+
+        // adding the button panel to the frame
+        calcFrame.add(btnPanel);
         // adding delete and all clear button to the frame
         calcFrame.add(delete);
         calcFrame.add(allClear);
