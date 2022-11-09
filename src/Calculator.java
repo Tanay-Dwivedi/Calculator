@@ -1,6 +1,7 @@
 // building......
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +16,13 @@ public class Calculator implements ActionListener {
     JButton decimals, equals, delete, allClear;
     // panel to hold all the buttons
     JPanel btnPanel;
+
+    // font for our calculator;
+    Font newFont = new Font("Ink Free", Font.BOLD, 40);
+
+    // values for the initial calc value
+    double numFirst = 0, numSecond = 0, result = 0;
+    char operator;
 
     public static void main(String[] args) {
 
