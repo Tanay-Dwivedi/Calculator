@@ -68,6 +68,14 @@ public class Calculator implements ActionListener {
             calcFunctionButtons[i].setFocusable(false);
         }
 
+        //  adding and giving the properties to the number buttons
+        for (int i=0; i<=9; i++) {
+            calcNumberButtons[i] = new JButton(String.valueOf(i));
+            calcNumberButtons[i].addActionListener(this);
+            calcNumberButtons[i].setFont(newFont);
+            calcNumberButtons[i].setFocusable(false);
+        }
+
         // adding the text field to the calculator frame
         calcFrame.add(calcTextField);
         calcFrame.setVisible(true);
