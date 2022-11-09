@@ -34,6 +34,15 @@ public class Calculator implements ActionListener {
     // creating a constructor
     Calculator() {
 
+        // adding the frame properties
+        calcFrame = new JFrame("Calculator");
+        calcFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        calcFrame.setSize(450, 550);
+        calcFrame.setLayout(null);
+        calcFrame.setLocationRelativeTo(null);
+
+        calcFrame.setVisible(true);
+
     }
 
     @Override
