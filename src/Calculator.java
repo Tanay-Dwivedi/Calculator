@@ -62,20 +62,30 @@ public class Calculator implements ActionListener {
         calcFunctionButtons[7] = allClear;
 
         //  giving the properties to the function buttons
-        for (int i=0; i<=7; i++) {
+        for (int i=0; i<8; i++) {
             calcFunctionButtons[i].addActionListener(this);
             calcFunctionButtons[i].setFont(newFont);
             calcFunctionButtons[i].setFocusable(false);
         }
 
         //  adding and giving the properties to the number buttons
-        for (int i=0; i<=9; i++) {
+        for (int i=0; i<10; i++) {
             calcNumberButtons[i] = new JButton(String.valueOf(i));
             calcNumberButtons[i].addActionListener(this);
             calcNumberButtons[i].setFont(newFont);
             calcNumberButtons[i].setFocusable(false);
         }
 
+        // adding the delete button
+        delete.setBounds(45, 430, 145, 45);
+
+        // adding the all clear button
+        allClear.setBounds(200, 430, 145, 45);
+
+
+        // adding delete and all clear button to the frame
+        calcFrame.add(delete);
+        calcFrame.add(allClear);
         // adding the text field to the calculator frame
         calcFrame.add(calcTextField);
         calcFrame.setVisible(true);
