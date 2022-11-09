@@ -143,40 +143,40 @@ public class Calculator implements ActionListener {
         }
 
         //  getting text when clicked on decimal button
-        if(e.getSource()==decimals) {
+        if (e.getSource() == decimals) {
             calcTextField.setText(calcTextField.getText().concat("."));
         }
 
         //  getting text when clicked on addition button
-        if(e.getSource()==addition) {
+        if (e.getSource() == addition) {
             numFirst = Double.parseDouble(calcTextField.getText());
-            operator ='+';
+            operator = '+';
             calcTextField.setText("");
         }
 
         //  getting text when clicked on subtraction button
-        if(e.getSource()==subtraction) {
+        if (e.getSource() == subtraction) {
             numFirst = Double.parseDouble(calcTextField.getText());
-            operator ='-';
+            operator = '-';
             calcTextField.setText("");
         }
 
         //  getting text when clicked on multiplication button
-        if(e.getSource()==multiplication) {
+        if (e.getSource() == multiplication) {
             numFirst = Double.parseDouble(calcTextField.getText());
-            operator ='*';
+            operator = '*';
             calcTextField.setText("");
         }
 
         //  getting text when clicked on division button
-        if(e.getSource()==division) {
+        if (e.getSource() == division) {
             numFirst = Double.parseDouble(calcTextField.getText());
-            operator ='/';
+            operator = '/';
             calcTextField.setText("");
         }
 
-        if(e.getSource()==equals) {
-            numSecond=Double.parseDouble(calcTextField.getText());
+        if (e.getSource() == equals) {
+            numSecond = Double.parseDouble(calcTextField.getText());
 
             // giving the logic to add, subtract, multiply and divide buttons
             switch (operator) {
@@ -194,27 +194,27 @@ public class Calculator implements ActionListener {
                 case '/' -> result = numFirst / numSecond;
             }
             calcTextField.setText(String.valueOf(result));
-            numFirst=result;
+            numFirst = result;
         }
 
         // logic for negative button
-        if(e.getSource()==negative) {
+        if (e.getSource() == negative) {
             double temp = Double.parseDouble(calcTextField.getText());
-            temp*=-1;
+            temp *= -1;
             calcTextField.setText(String.valueOf(temp));
         }
 
         // logic for delete button
-        if(e.getSource()==delete) {
+        if (e.getSource() == delete) {
             String string = calcTextField.getText();
             calcTextField.setText("");
-            for(int i=0;i<string.length()-1;i++) {
-                calcTextField.setText(calcTextField.getText()+string.charAt(i));
+            for (int i = 0; i < string.length() - 1; i++) {
+                calcTextField.setText(calcTextField.getText() + string.charAt(i));
             }
         }
 
         // logic for all clear button
-        if(e.getSource()==allClear) {
+        if (e.getSource() == allClear) {
             calcTextField.setText("");
         }
 
